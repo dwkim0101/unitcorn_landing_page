@@ -54,35 +54,6 @@ class HomePage extends StatelessWidget {
           return Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              DButton(
-                onTap: () => launchUrl(Uri.parse('https://github.com'
-                    '/Nialixus'
-                    '/flutter_landing_page')),
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  height: kToolbarHeight,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'View the source code in',
-                        style: context.text.bodyMedium?.copyWith(
-                          color: Colors.black,
-                        ),
-                      ),
-                      const DImage(
-                        source: 'https://assets.stickpng.com'
-                            '/images'
-                            '/629b7adc7c5cd817694c3231.png',
-                        size: Size(80.0, 30.0),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               const Spacer(),
               FloatingActionButton(
                 shape: const CircleBorder(),
@@ -116,53 +87,66 @@ class HomePage extends StatelessWidget {
           // HomeStarter Section: Introduction
           HomeStarter(
             id: item.id,
-            title: "Explore Key Features or Benefits",
-            subtitle:
-                "We've Solved Problem with Your Solution - Making Your Life Easier. Get Ready for Our Upcoming Launch - Something Amazing Awaits. Stay Informed.",
+            title: "유니콘 UNITCON",
+            subtitle: "제 1회 수도권 대학 연합 IT 컨퍼런스 '유니콘'에 당신을 초대합니다!",
+          ),
+          HomeOutline(
+            id: item.id,
+            title: "대회개요",
+            subtitle: "대회의 진행방식을 소개합니다.",
+            cards: const [],
           ),
 
           // HomeFeatures Section: Key Features
           HomeFeatures(
             id: item.id,
-            title: 'Key Features',
-            subtitle:
-                'Explore Why Our Product is the Ideal Solution for Your Needs',
+            title: '참여학교',
+            subtitle: '이번 대회를 함께하는 학교를 확인해보세요!',
             cards: const [
               CardModel(
-                source: 'assets/image/icon_inactive_faq.svg',
-                title: "Discover the World's Wonders",
-                subtitle:
-                    'Embark on a mesmerizing journey to breathtaking destinations and uncover the hidden gems that make our planet truly extraordinary. 🚀',
+                source: "assets/image/school-logos/SJU.png",
+                title: "세종대학교",
+                subtitle: '제7대 소프트웨어융합대학 학생회 ‘태그’',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_features.svg',
-                title: 'Unleash Your Creativity',
-                subtitle:
-                    'Ignite your creative spark and let your imagination run wild with our vast collection of inspiring content, designed to fuel your artistic passions. 🎨',
+                source: "assets/image/school-logos/CAU.svg",
+                title: "중앙대학교",
+                subtitle: '제52대 소프트웨어학부 학생회 ‘AN;SWer’',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_pricing.svg',
-                title: 'Elevate Your Taste Buds',
-                subtitle:
-                    'Indulge in a delectable culinary journey that tantalizes your palate, as we guide you through a world of flavors and culinary adventures. 🍰',
+                source: "assets/image/school-logos/KU.jpg",
+                title: "건국대학교",
+                subtitle: ' 제5대 컴퓨터공학부 학생회 ‘ITZI’',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_faq.svg',
-                title: 'Master Your Fitness Journey',
-                subtitle:
-                    'Take control of your health and wellness goals with our expert guidance, tailored workouts, and nutrition tips to help you achieve the best version of yourself. 🏸',
+                source: "assets/image/school-logos/SSU.jpg",
+                title: "세종대학교",
+                subtitle: '제7대 소프트웨어융합대학 학생회 태그',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_features.svg',
-                title: 'Unlock Adventure Awaits',
-                subtitle:
-                    'Embark on thrilling adventures and create unforgettable moments as we guide you through an exciting world of experiences, from adrenaline-pumping escapades to serene getaways. 🏔',
+                source: "assets/image/school-logos/SJU.png",
+                title: "세종대학교",
+                subtitle: '제7대 소프트웨어융합대학 학생회 태그',
               ),
               CardModel(
-                source: 'assets/image/icon_inactive_pricing.svg',
-                title: 'Stay Informed and Inspired',
-                subtitle:
-                    'Get the latest news, insights, and motivation from our team of experts and thought leaders. Stay informed, stay inspired, and stay ahead of the curve. 🗞',
+                source: "assets/image/school-logos/SJU.png",
+                title: "세종대학교",
+                subtitle: '제7대 소프트웨어융합대학 학생회 태그',
+              ),
+              CardModel(
+                source: "assets/image/school-logos/SJU.png",
+                title: "세종대학교",
+                subtitle: '제7대 소프트웨어융합대학 학생회 태그',
+              ),
+              CardModel(
+                source: "assets/image/school-logos/SJU.png",
+                title: "세종대학교",
+                subtitle: '제7대 소프트웨어융합대학 학생회 태그',
+              ),
+              CardModel(
+                source: "assets/image/school-logos/SJU.png",
+                title: "세종대학교",
+                subtitle: '제7대 소프트웨어융합대학 학생회 태그',
               ),
             ],
           ),
@@ -170,31 +154,28 @@ class HomePage extends StatelessWidget {
           // HomePricing Section: Pricing Plans
           HomePricing(
             id: item.id,
-            title: 'Choose the Perfect Plan',
-            subtitle:
-                'Explore the benefits and features of each plan to make the right choice for your business.',
+            title: '협찬사',
+            subtitle: '본 행사를 도와주시는 협찬사를 소개합니다.',
             plans: const [
               // HomePricingModel items representing pricing plans
               HomePricingModel(
-                title: 'Basic Plan',
-                price: 0,
-                benefits:
-                    "Affordable pricing for individuals and small businesses.\nEssential features to get started quickly.\n24/7 customer support for any assistance you need.",
-                type: HomePricingType.forever,
-              ),
+                  title: '세종대학교',
+                  imagePath: "assets/image/school-logos/SJU.png"),
               HomePricingModel(
-                title: 'Pro Plan',
-                price: 15,
-                benefits:
-                    "Ideal for growing businesses looking for advanced features.\nEnhanced performance and scalability.\nPriority support and access to premium resources.",
-                type: HomePricingType.month,
+                title: '경희대학교',
+                imagePath: "assets/image/school-logos/SJU.png",
               ),
               HomePricingModel(
                 title: 'Premium Plan',
-                price: 120,
-                benefits:
-                    "Experience the ultimate package with exclusive features.\nAdvanced tools and customizations for your business.\nDedicated account manager for personalized assistance.",
-                type: HomePricingType.year,
+                imagePath: "assets/image/school-logos/SJU.png",
+              ),
+              HomePricingModel(
+                title: 'Premium Plan',
+                imagePath: "assets/image/school-logos/SJU.png",
+              ),
+              HomePricingModel(
+                title: 'Premium Plan',
+                imagePath: "assets/image/school-logos/SJU.png",
               ),
             ],
           ),
@@ -202,8 +183,8 @@ class HomePage extends StatelessWidget {
           // HomeFAQ Section: Frequently Asked Questions
           HomeFAQ(
             id: item.id,
-            title: 'Frequently Asked Questions',
-            subtitle: 'Answers to Common Inquiries Regarding Payment Options',
+            title: 'FAQ',
+            subtitle: '궁금한 점이 있으시다면 무엇이든 물어보세요!',
             cards: const [
               // CardModel items representing frequently asked questions
               CardModel(

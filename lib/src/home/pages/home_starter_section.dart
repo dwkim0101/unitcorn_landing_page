@@ -141,7 +141,6 @@ class HomeStarter extends StatelessWidget {
               child: Text(
                 '\n$subtitle',
                 semanticsLabel: subtitle,
-                style: context.text.bodySmall,
                 textAlign: TextAlign.justify,
               ),
             ),
@@ -158,65 +157,69 @@ class HomeStarter extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           verticalDirection: VerticalDirection.down,
           children: [
-            // Display email input area
-            Semantics(
-              label: 'Enter Your Email Address to Join the Waitlist',
-              textField: true,
-              child: ExcludeSemantics(
-                excluding: true,
-                child: DTextArea(
-                  isDense: false,
-                  textAlign: TextAlign.start,
-                  cursorColor: context.color.background,
-                  borderRadius: BorderRadius.circular(Constants.spacing * 0.5),
-                  borderSideIdle: BorderSide.none,
-                  backgroundColor: context.color.onBackground.withOpacity(0.5),
-                  hintText: 'Enter Your Email Adress              ',
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: Constants.spacing,
-                  ),
-                  textStyle: context.text.bodySmall?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: context.color.surface,
-                  ),
-                  hintStyle: context.text.bodySmall?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: context.color.surface.withOpacity(0.5),
-                  ),
-                  borderSideActive: BorderSide(
-                    color: context.color.background.withOpacity(0.75),
-                  ),
-                  placeholder: DButton.text(
-                    text:
-                        'Enter Your Email Adress                        | Join Waitlist',
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: Constants.spacing,
-                      vertical: Constants.spacing * 0.75,
-                    ),
-                    style: context.text.bodySmall
-                        ?.copyWith(fontWeight: FontWeight.w500),
-                    onTap: () {},
-                  ),
-
-                  // Display "Join Waitlist" button
-                  suffixIcon: DButton.text(
-                    onTap: () => context.go('/dashboard'),
-                    text: 'Join Waitlist',
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: Constants.spacing,
-                      vertical: Constants.spacing * 0.7,
-                    ),
-                    style: context.text.bodyMedium?.copyWith(
-                      color: context.color.primary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
-                    ),
-                    borderRadius:
-                        BorderRadius.circular(Constants.spacing * 0.25),
-                  ),
-                ),
+            DButton.text(
+              onTap: () => context.go('/dashboard'),
+              text: '지금 바로 신청하기',
+              padding: const EdgeInsets.symmetric(
+                horizontal: Constants.spacing,
+                vertical: Constants.spacing * 0.7,
               ),
+              style: context.text.bodyMedium?.copyWith(
+                color: context.color.primary,
+                fontWeight: FontWeight.bold,
+                fontSize: 12.0,
+              ),
+              borderRadius: BorderRadius.circular(Constants.spacing * 0.25),
             ),
+            // // Display email input area
+            // Semantics(
+            //   label: 'Enter Your Email Address to Join the Waitlist',
+            //   textField: true,
+            //   child: ExcludeSemantics(
+            //     excluding: true,
+            //     child: DTextArea(
+            //       isDense: false,
+            //       textAlign: TextAlign.start,
+            //       cursorColor: context.color.surface,
+            //       borderRadius: BorderRadius.circular(Constants.spacing * 0.5),
+            //       borderSideIdle: BorderSide.none,
+            //       backgroundColor: context.color.onSurface.withOpacity(0.5),
+            //       // hintText: 'Enter Your Email Adress              ',
+            //       contentPadding: const EdgeInsets.symmetric(
+            //         horizontal: Constants.spacing,
+            //       ),
+            //       textStyle: context.text.bodySmall?.copyWith(
+            //         fontFamily: 'Pretendard',
+            //         fontWeight: FontWeight.w500,
+            //         color: context.color.surface,
+            //       ),
+            //       hintStyle: context.text.bodySmall?.copyWith(
+            //         fontFamily: 'Pretendard',
+            //         fontWeight: FontWeight.w500,
+            //         color: context.color.surface.withOpacity(0.5),
+            //       ),
+            //       borderSideActive: BorderSide(
+            //         color: context.color.surface.withOpacity(0.75),
+            //       ),
+            //       // placeholder: DButton.text(
+            //       //   text:
+            //       //       'Enter Your Email Adress                        | Join Waitlist',
+            //       //   padding: const EdgeInsets.symmetric(
+            //       //     horizontal: Constants.spacing,
+            //       //     vertical: Constants.spacing * 0.75,
+            //       //   ),
+            //       //   style: context.text.bodySmall
+            //       //       ?.copyWith(fontWeight: FontWeight.w500),
+            //       //   onTap: () {},
+            //       // ),
+
+            //       // Display "Join Waitlist" button
+            //       suffixIcon:
+
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -242,8 +245,8 @@ class HomeStarter extends StatelessWidget {
       ],
       child: Transform(
         transform: Matrix4.identity()
-          ..rotateZ(3.14 * 0.15)
-          ..scale(1.25),
+          ..rotateZ(3.14 * 0)
+          ..scale(0.5),
         alignment: Alignment.center,
         child: Semantics(
           label: 'Flutter Landing Page Thumbnail',
@@ -251,7 +254,9 @@ class HomeStarter extends StatelessWidget {
           child: Seo.image(
               alt: 'Flutter Landing Page Thumbnail',
               src: '/assets/assets/image/thumbnail.png',
-              child: const DImage(source: 'assets/image/thumbnail.png')),
+              child: const DImage(
+                source: 'assets/image/thumbnail.png',
+              )),
         ),
       ),
     );

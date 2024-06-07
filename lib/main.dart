@@ -16,7 +16,7 @@ void main() {
         return SeoController(
           tree: WidgetTree(context: context),
           child: MaterialApp.router(
-            title: 'Flutter Landing Page',
+            title: '유니콘 : 수도권 대학 IT 연합 컨퍼런스',
             routerConfig: Env.routes,
             theme: Constants.lightTheme,
             debugShowCheckedModeBanner: false,

@@ -80,10 +80,8 @@ class HomePricing extends StatelessWidget {
     return Builder(
       builder: (context) {
         return Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: Constants.spacing,
-            vertical: Constants.spacing * 2.0,
-          ),
+          padding: const EdgeInsets.fromLTRB(Constants.spacing,
+              Constants.spacing * 10, Constants.spacing, Constants.spacing * 0),
           child: Animate(
             autoPlay: false,
             onInit: Env.controller.animate(id),
@@ -92,12 +90,12 @@ class HomePricing extends StatelessWidget {
               SlideEffect(
                 begin: Offset(0.0, -0.25),
                 end: Offset.zero,
-                duration: Duration(milliseconds: 750),
+                duration: Duration(milliseconds: 150),
               ),
 
               // Fade in animation effect
               FadeEffect(
-                duration: Duration(milliseconds: 750),
+                duration: Duration(milliseconds: 150),
               ),
             ],
             child: MergeSemantics(
@@ -149,14 +147,14 @@ class HomePricing extends StatelessWidget {
             SlideEffect(
               begin: const Offset(-0.25, 0.0),
               end: Offset.zero,
-              delay: const Duration(milliseconds: 750) * index * 1.5,
-              duration: const Duration(milliseconds: 750),
+              delay: const Duration(milliseconds: 250) * index * 1.5,
+              duration: const Duration(milliseconds: 250),
             ),
 
             // Fade in animation effect
             FadeEffect(
-              delay: const Duration(milliseconds: 750) * index * 1.5,
-              duration: const Duration(milliseconds: 750),
+              delay: const Duration(milliseconds: 250) * index * 1.5,
+              duration: const Duration(milliseconds: 250),
             ),
           ],
           child: Container(
@@ -165,7 +163,7 @@ class HomePricing extends StatelessWidget {
             margin: const EdgeInsets.only(right: Constants.spacing),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Constants.spacing),
-              color: context.color.background,
+              color: context.color.surface,
             ),
             child: MergeSemantics(
               child: Column(
@@ -179,7 +177,7 @@ class HomePricing extends StatelessWidget {
                       item.title,
                       semanticsLabel: item.title,
                       style: context.text.titleMedium?.copyWith(
-                        color: context.color.onBackground,
+                        color: context.color.onSurface,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -191,136 +189,126 @@ class HomePricing extends StatelessWidget {
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          // Display price currency
-                          Seo.text(
-                            text: '\$',
-                            style: TextTagStyle.h4,
-                            child: Text(
-                              '\$',
-                              semanticsLabel: 'USD',
-                              style: context.text.bodyMedium?.copyWith(
-                                color: context.color.onBackground,
-                                fontSize: 20.0,
-                              ),
-                            ),
-                          ),
-
-                          // Display the price
-                          Seo.text(
-                            text: item.price.toString(),
-                            style: TextTagStyle.h2,
-                            child: Text(
-                              "${item.price}",
-                              semanticsLabel: item.price.toString(),
-                              style: context.text.titleLarge?.copyWith(
-                                fontSize: 40.0,
-                                fontWeight: FontWeight.w900,
-                                color: context.color.onBackground,
-                                height: 1.1,
-                              ),
-                            ),
-                          ),
-
-                          // Display the period
-                          Seo.text(
-                            text: item.type.name,
-                            style: TextTagStyle.h4,
-                            child: Text(
-                              "/${item.type.name}",
-                              semanticsLabel: item.type.name.toString(),
-                              style: context.text.bodyMedium?.copyWith(
-                                color:
-                                    context.color.onBackground.withOpacity(0.5),
-                              ),
-                            ),
+                          SizedBox(
+                            height: 150,
+                            child: Image.asset(item.imagePath),
                           ),
                         ],
                       ),
                     ),
                   ),
+                  //       mainAxisSize: MainAxisSize.min,
+                  //       mainAxisAlignment: MainAxisAlignment.center,
+                  //       crossAxisAlignment: CrossAxisAlignment.end,
+                  //       children: [
+                  //         // Display price currency
+                  //         Seo.text(
+                  //           text: '\$',
+                  //           style: TextTagStyle.h4,
+                  //           child: Text(
+                  //             '\$',
+                  //             semanticsLabel: 'USD',
+                  //             style: context.text.bodyMedium?.copyWith(
+                  //               color: context.color.onSurface,
+                  //               fontSize: 20.0,
+                  //             ),
+                  //           ),
+                  //         ),
 
-                  // Display card list
-                  Flexible(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: item.benefits.split("\n").to(
-                              (index, item) => Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: Constants.spacing),
-                                child: MergeSemantics(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      // Display benefit checkmark
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            right: Constants.spacing),
-                                        child: Seo.text(
-                                          text: '✓',
-                                          style: TextTagStyle.p,
-                                          child: Text(
-                                            "✓",
-                                            semanticsLabel: 'Including',
-                                            style: context.text.bodyMedium
-                                                ?.copyWith(
-                                              color: context.color.primary,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
+                  //         // Display the price
+                  //         Seo.text(
+                  //           text: item.price.toString(),
+                  //           style: TextTagStyle.h2,
+                  //           child: Text(
+                  //             "${item.price}",
+                  //             semanticsLabel: item.price.toString(),
+                  //             style: context.text.titleLarge?.copyWith(
+                  //               fontSize: 40.0,
+                  //               fontWeight: FontWeight.w900,
+                  //               color: context.color.onSurface,
+                  //               height: 1.1,
+                  //             ),
+                  //           ),
+                  //         ),
 
-                                      // Display benefit description
-                                      Expanded(
-                                        child: Seo.text(
-                                          text: item,
-                                          style: TextTagStyle.p,
-                                          child: Text(
-                                            item,
-                                            semanticsLabel: item,
-                                            textAlign: TextAlign.justify,
-                                            style: context.text.bodySmall
-                                                ?.copyWith(
-                                              color: context.color.onBackground,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                      ),
-                    ),
-                  ),
+                  //         //Display the period
+                  //         Seo.text(
+                  //           text: item.type.name,
+                  //           style: TextTagStyle.h4,
+                  //           child: Text(
+                  //             "/${item.type.name}",
+                  //             semanticsLabel: item.type.name.toString(),
+                  //             style: context.text.bodyMedium?.copyWith(
+                  //               color: context.color.onSurface.withOpacity(0.5),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+
+                  // // Display card list
+                  // Flexible(
+                  //   child: SingleChildScrollView(
+                  //     scrollDirection: Axis.vertical,
+                  //     child: Column(
+                  //       mainAxisSize: MainAxisSize.min,
+                  //       children: item.benefits.split("\n").to(
+                  //             (index, item) => Padding(
+                  //               padding: const EdgeInsets.only(
+                  //                   bottom: Constants.spacing),
+                  //               child: MergeSemantics(
+                  //                 child: Row(
+                  //                   mainAxisAlignment: MainAxisAlignment.start,
+                  //                   crossAxisAlignment:
+                  //                       CrossAxisAlignment.start,
+                  //                   children: [
+                  //                     // Display benefit checkmark
+                  //                     Padding(
+                  //                       padding: const EdgeInsets.only(
+                  //                           right: Constants.spacing),
+                  //                       child: Seo.text(
+                  //                         text: '✓',
+                  //                         style: TextTagStyle.p,
+                  //                         child: Text(
+                  //                           "✓",
+                  //                           semanticsLabel: 'Including',
+                  //                           style: context.text.bodyMedium
+                  //                               ?.copyWith(
+                  //                             color: context.color.primary,
+                  //                           ),
+                  //                         ),
+                  //                       ),
+                  //                     ),
+
+                  //                     // Display benefit description
+                  //                     Expanded(
+                  //                       child: Seo.text(
+                  //                         text: item,
+                  //                         style: TextTagStyle.p,
+                  //                         child: Text(
+                  //                           item,
+                  //                           semanticsLabel: item,
+                  //                           textAlign: TextAlign.justify,
+                  //                           style: context.text.bodySmall
+                  //                               ?.copyWith(
+                  //                             color: context.color.onSurface,
+                  //                           ),
+                  //                         ),
+                  //                       ),
+                  //                     ),
+                  //                   ],
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           ),
+                  //     ),
+                  //   ),
+                  // ),
 
                   // Display Upgrade button
-                  Semantics(
-                    label: 'Upgrade Your Plan',
-                    link: true,
-                    child: Seo.link(
-                      anchor: 'Upgrade',
-                      href: '/dashboard',
-                      child: DButton.text(
-                        onTap: () => context.go('/dashboard'),
-                        color: context.color.primary,
-                        text: 'Upgrade',
-                        style: context.text.bodyMedium?.copyWith(
-                          color: context.color.background,
-                        ),
-                        borderRadius: BorderRadius.circular(Constants.spacing),
-                        margin: const EdgeInsets.only(top: Constants.spacing),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

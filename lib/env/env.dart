@@ -32,8 +32,9 @@ class Env {
 
   static const List<NavigationModel> navigations = [
     NavigationModel.starter,
-    NavigationModel.features,
-    NavigationModel.pricing,
+    NavigationModel.outline,
+    NavigationModel.schools,
+    NavigationModel.sponsor,
     NavigationModel.faq
   ];
 

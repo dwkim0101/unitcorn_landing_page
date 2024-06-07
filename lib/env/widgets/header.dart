@@ -32,8 +32,8 @@ class NavigationHeader extends AppBar {
                   textSelectionTheme: context.theme.textSelectionTheme.copyWith(
                     selectionColor: selectionColor ??
                         Color.lerp(
-                          context.color.onBackground,
-                          context.color.background,
+                          context.color.onSurface,
+                          context.color.surface,
                           progress,
                         )?.withOpacity(0.25),
                   ),
@@ -41,7 +41,7 @@ class NavigationHeader extends AppBar {
                 child: Container(
                   color: Color.lerp(
                     context.color.primary.withOpacity(progress),
-                    context.color.onBackground,
+                    context.color.onSurface,
                     progress,
                   ),
                   alignment: Alignment.center,
@@ -62,7 +62,7 @@ class NavigationHeader extends AppBar {
                     onTap: () => Scaffold.of(context).openDrawer(),
                     padding: const EdgeInsets.all(Constants.spacing * 0.75),
                     color: Colors.transparent,
-                    child: Icon(Icons.menu, color: context.color.background),
+                    child: Icon(Icons.menu, color: context.color.surface),
                   ),
                 ),
               NavigationHeader.logo(),
@@ -84,7 +84,7 @@ class NavigationHeader extends AppBar {
                                   text: navigation.name,
                                   color: Colors.transparent,
                                   style: context.text.bodyMedium?.copyWith(
-                                    color: context.color.background,
+                                    color: context.color.surface,
                                   ),
                                   onTap: () => Env.controller.onTap(
                                     context,
@@ -103,10 +103,10 @@ class NavigationHeader extends AppBar {
                   label: 'Go to dashboard',
                   link: true,
                   child: Seo.link(
-                    anchor: 'Get Started',
+                    anchor: '지금 바로 신청하기',
                     href: '/dashboard',
                     child: DButton.text(
-                      text: 'Get Started',
+                      text: '지금 바로 신청하기',
                       padding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 8.0),
                       borderRadius: BorderRadius.circular(20.0),
@@ -127,13 +127,14 @@ class NavigationHeader extends AppBar {
   static Widget logo() {
     return Builder(builder: (context) {
       return Seo.text(
-        text: '🎉  FLUTTER',
+        text: '🦄  유니콘 :수도권 대학 연합 IT 컨퍼런스',
         style: TextTagStyle.h1,
         child: Text(
           // Your logo
-          '🎉  FLUTTER', semanticsLabel: 'Flutter Landing Page Logo',
+          '🦄 유니콘',
+          semanticsLabel: 'Flutter Landing Page Logo',
           style: context.text.titleLarge?.copyWith(
-            color: context.color.background,
+            color: context.color.surface,
             fontWeight: FontWeight.w900,
             fontSize: 20.0,
           ),

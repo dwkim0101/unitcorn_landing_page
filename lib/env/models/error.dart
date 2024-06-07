@@ -21,10 +21,7 @@ class ErrorModel extends DModel {
     return const ErrorModel(
       id: 404,
       title: 'Page Not Found',
-      subtitle: "The page you are looking for "
-          "might be under construction "
-          "or does not exist. "
-          "Let's get you back on track!",
+      subtitle: "페이지가 없습니다!",
     );
   }
 }

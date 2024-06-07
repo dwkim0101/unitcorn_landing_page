@@ -1,7 +1,7 @@
 part of '../home.dart';
 
-class HomeFeatures extends StatefulWidget {
-  const HomeFeatures({
+class HomeOutline extends StatefulWidget {
+  const HomeOutline({
     super.key,
     required this.id,
     required this.title,
@@ -12,7 +12,7 @@ class HomeFeatures extends StatefulWidget {
   final List<CardModel> cards;
 
   @override
-  State<HomeFeatures> createState() => _HomeFeaturesState();
+  State<HomeOutline> createState() => _HomeOutlineState();
 
   static Widget introduction({
     required String id,
@@ -160,7 +160,7 @@ class HomeFeatures extends StatefulWidget {
   }
 }
 
-class _HomeFeaturesState extends State<HomeFeatures> {
+class _HomeOutlineState extends State<HomeOutline> {
   ScrollController controller = ScrollController();
   @override
   void initState() {
@@ -189,7 +189,7 @@ class _HomeFeaturesState extends State<HomeFeatures> {
         mainAxisSize: MainAxisSize.max,
         children: [
           // Display label
-          HomeFeatures.introduction(
+          HomeOutline.introduction(
               id: widget.id, title: widget.title, subtitle: widget.subtitle),
 
           // Display card
@@ -216,7 +216,7 @@ class _HomeFeaturesState extends State<HomeFeatures> {
                         duration: const Duration(milliseconds: 100),
                       ),
                     ],
-                    child: HomeFeatures.card(item: item),
+                    child: HomeOutline.card(item: item),
                   )),
             ),
           ),
@@ -227,7 +227,7 @@ class _HomeFeaturesState extends State<HomeFeatures> {
         children: [
           // Display label with different tree
           Center(
-            child: HomeFeatures.introduction(
+            child: HomeOutline.introduction(
                 id: widget.id, title: widget.title, subtitle: widget.subtitle),
           ),
           // Display card with different tree
@@ -264,7 +264,7 @@ class _HomeFeaturesState extends State<HomeFeatures> {
                                     duration: const Duration(milliseconds: 250),
                                   ),
                                 ],
-                                child: HomeFeatures.card(item: item),
+                                child: HomeOutline.card(item: item),
                               ),
                             ),
                       ),
@@ -291,7 +291,7 @@ class _HomeFeaturesState extends State<HomeFeatures> {
                                     duration: const Duration(milliseconds: 250),
                                   ),
                                 ],
-                                child: HomeFeatures.card(item: item),
+                                child: HomeOutline.card(item: item),
                               ),
                             ),
                       ),
@@ -324,7 +324,7 @@ class _HomeFeaturesState extends State<HomeFeatures> {
       //     crossAxisAlignment: CrossAxisAlignment.stretch,
       //     children: [
       //       // Display label
-      //       HomeFeatures.introduction(id: id, title: title, subtitle: subtitle),
+      //       HomeOutline.introduction(id: id, title: title, subtitle: subtitle),
 
       //       // Display swiper
       //       Expanded(
@@ -349,7 +349,7 @@ class _HomeFeaturesState extends State<HomeFeatures> {
       //               clipBehavior: Clip.none,
       //               physics: const BouncingScrollPhysics(),
       //               child: Column(
-      //                   children: [HomeFeatures.card(item: cards[index])]),
+      //                   children: [HomeOutline.card(item: cards[index])]),
       //             ),
       //             itemCount: cards.length,
       //             autoplay: true,
