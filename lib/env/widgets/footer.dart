@@ -8,11 +8,11 @@ class NavigationFooter extends StatelessWidget {
     return Theme(
       data: context.theme.copyWith(
         textSelectionTheme: TextSelectionThemeData(
-          selectionColor: context.color.background.withOpacity(0.15),
+          selectionColor: context.color.surface.withOpacity(0.15),
         ),
       ),
       child: Container(
-        color: context.color.onBackground,
+        color: context.color.onSurface,
         padding: const EdgeInsets.all(Constants.spacing),
         constraints: BoxConstraints(minWidth: context.width),
         child: Wrap(
@@ -67,39 +67,19 @@ class NavigationFooter extends StatelessWidget {
                     ),
                   ),
 
-                  // Contact Us Button
-                  Semantics(
-                    label: 'Author Email',
-                    link: true,
-                    child: Seo.link(
-                      anchor: 'Contact Us',
-                      href: 'mailto://nialixus@gmail.com',
-                      child: DButton.text(
-                        onTap: () =>
-                            launchUrl(Uri.parse('mailto://nialixus@gmail.com')),
-                        text: 'Contact Us',
-                        style: context.text.bodyMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: context.color.primary,
-                        ),
-                        color: Colors.transparent,
-                      ),
-                    ),
-                  ),
-
                   // Blog Button
                   Semantics(
                     label: 'Github Repository',
                     link: true,
                     child: Seo.link(
-                      anchor: 'Blog',
-                      href: 'https://github.com/Nialixus/flutter_landing_page',
+                      anchor: 'Instagram',
+                      href: 'https://www.instagram.com/unitcon.official',
                       child: DButton.text(
                         onTap: () => launchUrl(
-                          Uri.parse('https://github.com/'
-                              'Nialixus/flutter_landing_page'),
+                          Uri.parse(
+                              'https://www.instagram.com/unitcon.official'),
                         ),
-                        text: 'Blog',
+                        text: 'Instagram',
                         style: context.text.bodyMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                           color: context.color.primary,
@@ -114,16 +94,16 @@ class NavigationFooter extends StatelessWidget {
 
             // Copyright text
             Semantics(
-              label: 'Copyright 2023 Louis Wiwawan',
+              label: 'Copyright 2024 Daniel Kim',
               child: Seo.link(
-                anchor: '© 2023 Louis Wiwawan',
-                href: 'https://github.com/Nialixus/'
-                    'flutter_landing_page/blob/main/LICENSE',
+                anchor: '© 2024 Daniel Kim',
+                href: 'https://github.com/dwkim0101/'
+                    'unitcorn_landing_page',
                 child: DButton.text(
                   mainAxisSize: MainAxisSize.min,
-                  text: "© 2023 Louis Wiwawan",
+                  text: "© 2024 Daniel Kim",
                   style: context.text.bodyMedium?.copyWith(
-                    color: context.color.background.withOpacity(0.25),
+                    color: context.color.surface.withOpacity(0.25),
                     fontWeight: FontWeight.w400,
                     fontSize: 11.0,
                   ),
@@ -131,8 +111,8 @@ class NavigationFooter extends StatelessWidget {
                   color: Colors.transparent,
                   onTap: () => launchUrl(
                     Uri.parse(
-                      'https://github.com/Nialixus/'
-                      'flutter_landing_page/blob/main/LICENSE',
+                      'https://github.com/dwkim0101/'
+                      'unitcorn_landing_page',
                     ),
                   ),
                 ),

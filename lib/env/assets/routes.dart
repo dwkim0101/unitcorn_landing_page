@@ -9,10 +9,10 @@ class Routes {
         return DLogWidget(
           'http://localhost${state.uri}',
           child: Seo.head(tags: const [
-            MetaTag(name: 'title', content: 'Flutter Landing Page'),
+            MetaTag(name: 'title', content: '유니콘 : 제 1회 수도권 대학 연합 IT 컨퍼런스'),
             LinkTag(
               rel: 'canonical',
-              href: 'https://nialixus-landing-page.web.app',
+              href: 'https://unitcorn-landing-page.web.app',
             )
           ], child: const HomePage()),
         );
@@ -31,9 +31,9 @@ class Routes {
             ..author(author: 'Louis Wiwawan')
             ..ogDescription(
                 ogDescription: 'An example of error page in flutter.')
-            ..ogImage(
-                ogImage: 'https://user-images.githubusercontent.com/'
-                    '45191605/283660084-c7bd8b9d-34b1-49e7-88e3-7c52a2003532.png')
+            // ..ogImage(
+            //     ogImage: 'https://user-images.githubusercontent.com/'
+            //         '45191605/283660084-c7bd8b9d-34b1-49e7-88e3-7c52a2003532.png')
             ..nameContent(name: 'twitter:site', content: '@wawan_ariwijaya');
         }
         return DLogWidget(
